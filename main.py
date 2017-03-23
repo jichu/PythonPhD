@@ -44,7 +44,7 @@ if debug==0:
 
 result=sp.SpiderHopfield(vzory,test,1)
 
-#print(result)
+print(result)
 
 paintSample(result)
 
