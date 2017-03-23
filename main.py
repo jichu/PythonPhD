@@ -1,12 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 import math
-import spiderhopfield as sp
 import ctypes
-import pprint
-import samples
 
-import time
+import spiderhopfield as sp
+import samples as data
 
 win32 = ctypes.windll.user32
 
@@ -34,17 +32,17 @@ canvas.place(x=pad,y=pad)
 
 debug=0
 
-vzory=samples.vzoryTest2
-test=samples.vzorNoiseTest
+vzory=data.vzoryTest2
+test=data.vzorNoiseTest
           
 
 if debug==0:
-      vzory=samples.vzory
-      test=sp.NoiseBipolar(vzory[1],10)
+      vzory=data.vzory
+      test=sp.NoiseBipolar(vzory[18],25)
 
 result=sp.SpiderHopfield(vzory,test,1)
 
-print(result)
+#print(sp.Position(vzory,result))
 
 paintSample(result)
 
